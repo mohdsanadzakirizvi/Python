@@ -1,0 +1,124 @@
+import math
+print "Hello World I'm CAL-C"
+print  "1. ADD"
+print  "2.SUB"
+print  "3.PRODUCT"
+print  "4.DIVIDE"
+print  "5.ABOUT?"
+print  "0.EXIT"
+print  "99.ADVANCED FUNCTIONS"
+print  "enter your choice"
+ch=input()
+if ch==0:
+    exit()
+if ch==5:
+    print" CAL-C 1.0 ver. \n Developer : \n Mohd. Sanad"
+    exit()
+                
+if ch!=99:
+     print "NOTE!\n Python assumes operations on integers to be integers \n and does not give output in decimal. \n So if you want answer in decimal \n please use a decimal point with one or more number."  
+     print "Type \"help\" for an example or ok to continue."
+     h=raw_input()
+     if h=="help":
+         print "For Example:\n you want to divide 18 by 7 \n  Python gives the answer 2 not 2.57...etc \n in order to get output in decimal\n type either 18.0/7 or 18/7.0 or 18.0/7.0"
+     print  "ENTER FIRST NUMBER :\n "
+     n=input()
+     print "ENTER SECOND NUMBER :\n "
+     m=input()
+    
+    
+if ch!=0:
+   
+    if ch==1:
+        print "sum=  "+str(n+m)
+        exit()
+    elif ch==2:
+        print"difference=  "
+        if n>m:
+              print n-m
+        else:
+              print m-n
+        exit()      
+    elif ch==3:
+         print"product=="
+         print n*m
+         exit()
+    elif ch==4:
+         print"quotient=="
+         
+         if n>m:
+               if m==0:
+                   print "Mathematical Error: can't divide a number by 0"
+                   exit()
+               else:
+
+                   print n/m
+         else:
+              if n==0:
+                  print "Mathematical Error: can't divide a number by 0" 
+                  exit()
+              else:
+                   print m/n
+              exit()
+    elif ch==99:
+          print "1.Absolute value"
+          print "2.Square root"
+          print "3.Power value(a^m)"
+          print "4.Factorial"
+          print "5.Logarithm"
+          print "enter you choice"
+          c=input()
+          if c==1:
+              print "enter x"
+              x=input()
+              print math.fabs(x)
+              exit()
+          elif c==2:
+              print "enter x"
+              x=input()
+              if x<0:
+                  print "Error Root of a negative number is imaginary!"
+                  exit()
+              else :
+                  print math.sqrt(x)
+                  exit()
+          elif c==3:
+               print "enter a"
+               x=input()
+               print "enter m"
+               m=input()
+               print math.pow(x,m)
+               exit()
+          elif c==4:
+                print "enter x"
+                x=input()
+                print math.factorial(x)
+                exit()
+          else :
+               print "A. Log to the base 10"
+               print "B. Log to the base e"
+               print "enter your choice "
+               choic=raw_input()
+               if   choic=='A':
+                    print "enter x"
+                    x=input()
+                    print math.log10(x)
+                    exit()
+               elif choic=='B' :
+                    print "enter x"
+                    x=input()
+                    print math.log(x)
+                    exit()
+               else :
+                    exit()
+
+
+                  
+              
+              
+              
+          
+
+
+          
+    
