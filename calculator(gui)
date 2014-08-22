@@ -1,0 +1,142 @@
+from Tkinter import*
+
+
+
+#function for about menu 
+def about():
+    win2=Tk()
+    win2.wm_title("About")
+    l=Label(win2,text=" CAL-C ver 1.0 \n Developer. \n Mohd Sanad",padx=5,pady=40)
+    l.pack()
+st=""
+def but1():
+    global st
+    st=st+"1"
+    v.set(st)
+def but2():
+    global st
+    st=st+"2"
+    v.set(st)
+def but3():
+    global st
+    st=st+"3"
+    v.set(st)
+def but4():
+    global st
+    st=st+"4"
+    v.set(st)
+def but5():
+    global st
+    st=st+"5"
+    v.set(st)
+def but6():
+    global st
+    st=st+"6"
+    v.set(st)
+def but7():
+    global st
+    st=st+"7"
+    v.set(st)
+def but8():
+    global st
+    st=st+"8"
+    v.set(st)
+def but9():
+    global st
+    st=st+"9"
+    v.set(st)
+def but10():
+    global st
+    st=st+"0"
+    v.set(st)
+def bc():
+    global st
+    v.set("")
+    st=""
+def beql1():
+    bc()
+    
+def badd1():
+    if st!="":
+        
+        x=int(st)
+        bc()
+        if st!="":
+            y=int(st)
+            sum=x+y
+            v.set(x)
+            v.set(y)
+
+    
+    
+win=Tk()#creating window
+win.title("Calculator")#changing window title
+win.config(background= "white")
+#Initiliazing about menu button
+menubar=Menu(win,bg="brown")
+menubar.add_command(label="About",command=about)
+win.config(menu=menubar)
+
+
+#TextField
+v=StringVar()
+e=Entry(win,textvariable=v)
+e.grid(row=0,column=0,columnspan=3,sticky=W+E)
+#Initializing buttons
+b1=Button(win,text="1",bg="red")
+b2=Button(win,text="2",bg="red")
+b3=Button(win,text="3",bg="red")
+b4=Button(win,text="4",bg="red")
+b5=Button(win,text="5",bg="red")
+b6=Button(win,text="6",bg="red")
+b7=Button(win,text="7",bg="red")
+b8=Button(win,text="8",bg="red")
+b9=Button(win,text="9",bg="red")
+b10=Button(win,text="0",bg="red")
+bdec=Button(win,text=".",bg="orange")
+badd=Button(win,text="+",bg="yellow")
+bsub=Button(win,text="-",bg="yellow")
+bmul=Button(win,text="x",bg="yellow")
+bdiv=Button(win,text="/",bg="yellow")
+bclear=Button(win,text="CS",bg="blue")
+beql=Button(win,text="=",bg="orange")
+#Positioning Buttons
+
+b1.grid(row=1,column=0,sticky=W+E)
+b2.grid(row=1,column=1,sticky=W+E)
+b3.grid(row=1,column=2,sticky=W+E)
+b4.grid(row=2,column=0,sticky=W+E)
+b5.grid(row=2,column=1,sticky=W+E)
+b6.grid(row=2,column=2,sticky=W+E)
+b7.grid(row=3,column=0,sticky=W+E)
+b8.grid(row=3,column=1,sticky=W+E)
+b9.grid(row=3,column=2,sticky=W+E)
+b10.grid(row=4,column=0,sticky=W+E)
+bdec.grid(row=4,column=1,sticky=W+E)
+badd.grid(row=1,column=3,sticky=W+E)
+bsub.grid(row=2,column=3,sticky=W+E)
+bmul.grid(row=3,column=3,sticky=W+E)
+bdiv.grid(row=4,column=3,sticky=W+E)
+bclear.grid(row=0,column=3,sticky=W+E)
+beql.grid(row=4,column=2,sticky=W+E)
+#configuring button behaviour
+b1.config(command=but1)
+b2.config(command=but2)
+b3.config(command=but3)
+b4.config(command=but4)
+b5.config(command=but5)
+b6.config(command=but6)
+b7.config(command=but7)
+b8.config(command=but8)
+b9.config(command=but9)
+b10.config(command=but10)
+bclear.config(command=bc)
+beql.config(command=beql1)
+badd.config(command=badd1)
+
+
+
+
+
+            
+            
