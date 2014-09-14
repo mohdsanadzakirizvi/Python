@@ -9,6 +9,25 @@ def about():
     l=Label(win2,text=" CAL-C ver 1.0 \n Developer. \n Mohd Sanad",padx=5,pady=40)
     l.pack()
 st=""
+plus=0
+val=0.0
+sub=0
+divp=0
+mulp=0
+
+
+win=Tk()#creating window
+win.title("Calculator")#changing window title
+win.config(background= "white")
+#Initiliazing about menu button
+menubar=Menu(win,bg="brown")
+menubar.add_command(label="About",command=about)
+win.config(menu=menubar)
+#TextField
+v=StringVar()
+e=Entry(win,textvariable=v)
+e.grid(row=0,column=0,columnspan=3,sticky=W+E)
+
 def but1():
     global st
     st=st+"1"
@@ -53,35 +72,81 @@ def bc():
     global st
     v.set("")
     st=""
+def bdec1():
+    global st
+    st=st+"."
+    v.set(st)
+    
 def beql1():
-    bc()
+    
+    val2=0.0
+    global st
+    global val
+     
+    val2=float(st)
+    st=""
+    if plus==1:
+        
+         y=val+val2
+         st=st+str(y)
+         v.set(st)
+    if sub==1:
+         y1=val-val2
+         st=st+str(y1)
+         v.set(st)
+    
+    if mulp==1:
+         y2=val*val2
+         st=st+str(y2)
+         v.set(st)
+    
+    if divp==1:
+        if val2==0:
+            v.set("MATHS ERROR")
+        if val2!=0:
+            
+            y3=val/val2
+            st=st+str(y3)
+            v.set(st)
+    st=""
+    
+   
     
 def badd1():
-    if st!="":
-        
-        x=int(st)
-        bc()
-        if st!="":
-            y=int(st)
-            sum=x+y
-            v.set(x)
-            v.set(y)
+    global st
+    global plus
+    global val
+    val=float(st)    
+    st=""
+    plus=1
+def bsub1():
+    global st
+    global sub
+    global val
+    val=float(st)    
+    st=""
+    sub=1
+def bmul1():
+    global st
+    global mulp
+    global val
+    val=float(st)    
+    st=""
+    mulp=1
+def bdiv1():
+    global st
+    global divp
+    global val
+    val=float(st)    
+    st=""
+    divp=1
+
+
 
     
     
-win=Tk()#creating window
-win.title("Calculator")#changing window title
-win.config(background= "white")
-#Initiliazing about menu button
-menubar=Menu(win,bg="brown")
-menubar.add_command(label="About",command=about)
-win.config(menu=menubar)
 
 
-#TextField
-v=StringVar()
-e=Entry(win,textvariable=v)
-e.grid(row=0,column=0,columnspan=3,sticky=W+E)
 #Initializing buttons
 b1=Button(win,text="1",bg="red")
 b2=Button(win,text="2",bg="red")
@@ -133,6 +198,11 @@ b10.config(command=but10)
 bclear.config(command=bc)
 beql.config(command=beql1)
 badd.config(command=badd1)
+bdec.config(command=bdec1)
+bsub.config(command=bsub1)
+bmul.config(command=bmul1)
+bdiv.config(command=bdiv1)
+
 
 
 
