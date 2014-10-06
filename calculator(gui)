@@ -2,12 +2,13 @@ from Tkinter import*
 
 
 
+
 #function for about menu 
 def about():
     win2=Tk()
     win2.wm_title("About")
     l=Label(win2,text=" CAL-C ver 1.0 \n Developer. \n Mohd Sanad",padx=5,pady=40)
-    l.pack()
+    l.pack(fill="both")
 st=""
 plus=0
 val=0.0
@@ -18,7 +19,7 @@ mulp=0
 
 win=Tk()#creating window
 win.title("Calculator")#changing window title
-win.config(background= "white")
+win.option_add("*background", "white")
 #Initiliazing about menu button
 menubar=Menu(win,bg="brown")
 menubar.add_command(label="About",command=about)
@@ -82,22 +83,24 @@ def beql1():
     val2=0.0
     global st
     global val
+    st1=""
      
     val2=float(st)
     st=""
     if plus==1:
         
          y=val+val2
-         st=st+str(y)
+         st=st+repr(y)
          v.set(st)
     if sub==1:
          y1=val-val2
-         st=st+str(y1)
+         st=st+repr(y1)
          v.set(st)
     
     if mulp==1:
+         st=""
          y2=val*val2
-         st=st+str(y2)
+         st=st+repr(y2)
          v.set(st)
     
     if divp==1:
@@ -106,7 +109,7 @@ def beql1():
         if val2!=0:
             
             y3=val/val2
-            st=st+str(y3)
+            st=st+repr(y3)
             v.set(st)
     st=""
     
@@ -210,3 +213,4 @@ bdiv.config(command=bdiv1)
 
             
             
+
