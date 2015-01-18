@@ -210,7 +210,7 @@ bdiv.config(command=bdiv1)
 
 
 
-
+win.mainloop()
             
             
 
